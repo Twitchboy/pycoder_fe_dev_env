@@ -1,0 +1,35 @@
+{
+  "name": "pyCoder-project-web",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development supervisor ./dist/server/app.js",
+    "start:prod": "cross-env NODE_ENV=production supervisor ./dist/server/app.js",
+    "build:dev": "cross-env NODE_ENV=development gulp",
+    "build:prod": "cross-env NODE_ENV=production gulp",
+    "jsdoc": "jsdoc ./src/server/**/*js -d ./docs/jsdoc"
+  },
+  "keywords": [],
+  "author": "Junting <342766475@qq.com> (https://github.com/twitchbody)",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^5.1.6",
+    "koa": "^2.5.1",
+    "koa-simple-router": "^0.2.0",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-rollup": "^2.16.2",
+    "gulp-sequence": "^1.0.0",
+    "jsdoc": "^3.5.5",
+    "rollup-plugin-replace": "^2.0.0",
+    "supervisor": "^0.12.0"
+  }
+}
