@@ -1,8 +1,10 @@
 import _ from 'lodash';
+import { resolve } from 'path';
 
 let config = {
     port: 4000, // development env
-    viewDir: ""
+    viewDir: resolve(__dirname, `../views`),
+    staticDir: resolve(__dirname, `../assets/`)
 };
 
 // 配置项根据当前的环境产生

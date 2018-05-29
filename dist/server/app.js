@@ -26,9 +26,24 @@ var _errorHandler = require("./middleware/errorHandler");
 
 var _errorHandler2 = _interopRequireDefault(_errorHandler);
 
+var _koaStatic = require("koa-static");
+
+var _koaStatic2 = _interopRequireDefault(_koaStatic);
+
+var _koaSwig = require("koa-swig");
+
+var _koaSwig2 = _interopRequireDefault(_koaSwig);
+
+var _co = require("co");
+
+var _co2 = _interopRequireDefault(_co);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// koa-swig 需要配合着 co 模块， koa2
+
 // 日志配置
+// 静态资源服务
 _log4js2.default.configure({
     // 输出源
     appenders: { pycoder: { type: 'file', filename: (0, _path.resolve)(__dirname, './logs/pyCoder.log') } },
@@ -42,9 +57,20 @@ const app = new _koa2.default();
 const logger = _log4js2.default.getLogger('server');
 // 集中处理错误异常中心
 _errorHandler2.default.error(app, logger);
-// 路由集中处理Hub
+// 路由集中Hub
 _controllers2.default.getAllRouters(app, _koaSimpleRouter2.default); // 获取所有路由
 
+
+// koa-swig 配置
+app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
+    root: _config2.default.viewDir,
+    autoescape: true,
+    cache: 'memory', // disable, set to false
+    ext: 'html'
+}));
+
+// 静态资源
+app.use((0, _koaStatic2.default)(_config2.default.staticDir));
 app.listen(_config2.default.port, () => {
     // logger.info('PyCoder server log listening.')
     console.log(`PyCoder web is running, listening on port ${_config2.default.port}.`);

@@ -8,11 +8,14 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+var _path = require('path');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 let config = {
     port: 4000, // development env
-    viewDir: ""
+    viewDir: (0, _path.resolve)(__dirname, `../views`),
+    staticDir: (0, _path.resolve)(__dirname, `../assets/`)
 };
 
 // 配置项根据当前的环境产生

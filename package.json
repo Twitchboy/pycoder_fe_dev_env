@@ -9,15 +9,20 @@
     "start:prod": "cross-env NODE_ENV=production supervisor ./dist/server/app.js",
     "build:dev": "cross-env NODE_ENV=development gulp",
     "build:prod": "cross-env NODE_ENV=production gulp",
-    "jsdoc": "jsdoc ./src/server/**/*js -d ./docs/jsdoc"
+    "jsdoc": "jsdoc ./src/server/**/*js -d ./docs/jsdoc",
+    "clint:dev": "webpack --mode development",
+    "clint:prod": "webpack --mode production"
   },
   "keywords": [],
   "author": "Junting <342766475@qq.com> (https://github.com/twitchbody)",
   "license": "ISC",
   "dependencies": {
+    "co": "^4.6.0",
     "cross-env": "^5.1.6",
     "koa": "^2.5.1",
     "koa-simple-router": "^0.2.0",
+    "koa-static": "^4.0.3",
+    "koa-swig": "^2.2.1",
     "lodash": "^4.17.10",
     "log4js": "^2.7.0"
   },
@@ -31,6 +36,10 @@
     "gulp-sequence": "^1.0.0",
     "jsdoc": "^3.5.5",
     "rollup-plugin-replace": "^2.0.0",
-    "supervisor": "^0.12.0"
+    "supervisor": "^0.12.0",
+    "webpack": "^4.10.0",
+    "webpack-cli": "^2.1.4",
+    "webpack-merge": "^4.1.2",
+    "yargs-parser": "^10.0.0"
   }
 }
