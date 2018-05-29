@@ -5,20 +5,22 @@ Object.defineProperty(exports, "__esModule", {
 });
 /**
  * Index 数据模型
- * @Author: pycoder.Junting
+ * @fileOverview
+ * @author pycoder.Junting
  * @email: 342766475@qq.com
  * @Date: 2018-05-28 15:44:50
  * @Last Modified by: pycoder.Junting
- * @Last Modified time: 2018-05-28 15:54:22
+ * @Last Modified time: 2018-05-28 16:22:49
  */
 
 /**
- * IndexModel
+ * 首页数据模型
+ * @class IndexModel
  */
 class IndexModel {
   /**
    * @constructor
-   * @param {string} app koa2 上下文
+   * @param {string} app koa2上下文
    */
   constructor(app) {}
 
