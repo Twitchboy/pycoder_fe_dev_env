@@ -20,19 +20,27 @@
 ├── package-lock.json
 ├── package.json
 └── src
-    └── server
-        ├── app.js
-        ├── assets
-        ├── components
-        ├── config
-        │   └── index.js
-        ├── controllers
-        │   ├── IndexController.js
-        │   └── index.js
-        ├── middleware
-        ├── models
-        ├── tools
-        └── views
+│   └── server
+│       ├── app.js
+│        ├── assets
+│        ├── components
+│        ├── config
+│        │   └── index.js
+│       ├── controllers
+│       │   ├── IndexController.js
+│       │   └── index.js
+│       ├── middleware
+│       ├── models
+│       ├── tools
+│       └── views
+│   └── webApp
+│       ├── views
+│       │   ├── common
+│       │   ├── index
+│       │   └── index.entry.js
+│       └── widgets
+│           └── pyHeader
+└── webpack.config.js
 ```
 
 ## Server 端环境搭建使用相关插件
